@@ -104,6 +104,53 @@ body{
 .local{display:none;margin:20px 0 0;font-size:12px;letter-spacing:.3em;text-transform:uppercase;
        color:rgba(255,215,190,.45)}
 
+
+/* ---------- capa: toque para abrir ---------- */
+.capa{display:none}
+html.js .capa{
+  display:flex;position:fixed;inset:0;z-index:50;
+  flex-direction:column;align-items:center;justify-content:center;
+  gap:24px;padding:36px 22px;text-align:center;
+  background:linear-gradient(rgba(26,4,3,.90),rgba(26,4,3,.96)),
+             url("capa.jpg") center/cover no-repeat;
+  transition:opacity .75s ease, visibility .75s}
+html.js.aberto .capa{opacity:0;visibility:hidden;pointer-events:none}
+html.js:not(.aberto) body{overflow:hidden}
+.capa-marca{margin:0;max-width:12ch;font-size:clamp(28px,6.4vw,46px);font-weight:800;
+            line-height:1.08;letter-spacing:-.6px;color:var(--creme-forte)}
+.capa-greca{width:min(300px,68vw);height:20px;background-image:var(--greca);
+            background-repeat:repeat-x;background-position:center;opacity:.7}
+.abrir{display:inline-flex;align-items:center;gap:13px;padding:19px 34px;
+       border-radius:999px;border:2px solid var(--creme);background:rgba(0,0,0,.35);
+       color:var(--creme-forte);font:700 18px/1 var(--fonte);cursor:pointer;
+       animation:pulsa 2.4s ease-in-out infinite}
+.abrir svg{width:23px;height:23px;flex:0 0 23px}
+@keyframes pulsa{0%,100%{box-shadow:0 0 0 0 rgba(255,215,190,.42)}
+                 70%{box-shadow:0 0 0 20px rgba(255,215,190,0)}}
+.capa-nota{margin:0;font-size:12px;letter-spacing:.2em;text-transform:uppercase;
+           color:rgba(255,215,190,.58)}
+
+/* ---------- botao de som ---------- */
+.som{display:none;position:fixed;z-index:40;
+     right:calc(16px + env(safe-area-inset-right));
+     bottom:calc(16px + env(safe-area-inset-bottom));
+     width:54px;height:54px;border-radius:50%;align-items:center;
+     justify-content:center;border:1.5px solid var(--borda);
+     background:rgba(26,4,3,.88);color:var(--creme);cursor:pointer}
+html.js.aberto .som{display:flex}
+.som svg{width:24px;height:24px}
+.som .off{display:none}
+.som.mudo .on{display:none}
+.som.mudo .off{display:block}
+
+/* entrada do conteudo */
+html.js.aberto .palco>*,html.js.aberto .rodape{
+  animation:sobe .7s cubic-bezier(.22,.9,.3,1) backwards}
+html.js.aberto .palco>*:nth-child(2){animation-delay:.09s}
+html.js.aberto .palco>*:nth-child(3){animation-delay:.09s}
+html.js.aberto .rodape{animation-delay:.18s}
+@keyframes sobe{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+
 @media (min-width:900px){
   .palco{grid-template-columns:minmax(0,46%) minmax(0,1fr);gap:46px;
          padding:40px 28px 0;align-items:center}
@@ -112,10 +159,30 @@ body{
   .rodape{padding-top:42px}
   .local{display:block}
 }
-@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
+
+<script>document.documentElement.className+=" js";</script>
+
+<div class="capa" id="capa">
+  <div class="capa-greca" role="presentation"></div>
+  <p class="capa-marca">Grupo Eco do Pampa das Missões</p>
+  <button class="abrir" id="abrir" type="button">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg>
+    Toque para abrir
+  </button>
+  <p class="capa-nota">Com música</p>
+  <div class="capa-greca" role="presentation"></div>
+</div>
+
+<audio id="som" src="musica.mp3" loop preload="auto"></audio>
+
+<button class="som" id="btsom" type="button" aria-label="Ligar ou desligar a música">
+  <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+  <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="m16 9 5 6M21 9l-5 6"/></svg>
+</button>
 
 <div class="faixa topo" role="presentation"></div>
 
@@ -185,6 +252,49 @@ body{
 </div>
 
 <div class="faixa base" role="presentation"></div>
+
+<script>
+(function () {
+  var html = document.documentElement,
+      capa = document.getElementById('capa'),
+      abrir = document.getElementById('abrir'),
+      som = document.getElementById('som'),
+      btsom = document.getElementById('btsom'),
+      ALVO = 0.5;
+
+  function subirVolume() {                 // evita o susto do som entrando seco
+    var v = 0; som.volume = 0;
+    var t = setInterval(function () {
+      v = Math.min(ALVO, v + ALVO / 25);
+      som.volume = v;
+      if (v >= ALVO) clearInterval(t);
+    }, 40);
+  }
+
+  function entrar() {
+    html.classList.add('aberto');
+    var p = som.play();                    // so toca dentro do gesto do usuario
+    if (p && p.catch) {
+      p.then(subirVolume).catch(function () { btsom.classList.add('mudo'); });
+    } else { subirVolume(); }
+    setTimeout(function () { if (capa) capa.remove(); }, 900);
+  }
+
+  abrir.addEventListener('click', entrar);
+  capa.addEventListener('click', entrar);  // qualquer ponto da capa abre
+
+  btsom.addEventListener('click', function () {
+    if (som.paused) { som.play(); btsom.classList.remove('mudo'); }
+    else { som.pause(); btsom.classList.add('mudo'); }
+  });
+
+  // se a pessoa sair da aba, pausa; ao voltar, retoma se nao estava mudo
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) { som.pause(); }
+    else if (html.classList.contains('aberto') && !btsom.classList.contains('mudo')) { som.play(); }
+  });
+})();
+</script>
 
 </body>
 </html>
