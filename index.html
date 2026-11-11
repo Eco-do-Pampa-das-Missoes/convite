@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Grupo Eco do Pampa das Missões</title>
-<meta name="description" content="Agenda aberta para bailes, festas e eventos. Missões, RS. Contrate pelo WhatsApp.">
-<meta name="theme-color" content="#1A0403">
+<meta name="description" content="Grupo de música gaúcha das Missões, RS. Agenda aberta para bailes, festas e eventos. Contrate pelo WhatsApp.">
+<meta name="theme-color" content="#140303">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Grupo Eco do Pampa das Missões">
 <meta property="og:title" content="Grupo Eco do Pampa das Missões">
-<meta property="og:description" content="Agenda aberta para bailes, festas e eventos. Missões, RS.">
+<meta property="og:description" content="Música gaúcha das Missões, RS. Agenda aberta para bailes, festas e eventos.">
 <meta property="og:url" content="https://eco-do-pampa-das-missoes.github.io/convite/">
 <meta property="og:image" content="https://eco-do-pampa-das-missoes.github.io/convite/og.jpg">
 <meta property="og:image:width" content="1080">
@@ -20,146 +20,210 @@
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --vinho:#1A0403;
+  --vinho:#140303;
+  --vinho2:#1F0605;
   --brasa:#C80910;
   --creme:#FFD7BE;
-  --creme-forte:#FFEEE2;
-  --borda:rgba(255,215,190,.38);
+  --creme-forte:#FFF1E7;
+  --borda:rgba(255,215,190,.26);
   --fonte:"Poppins","Segoe UI",system-ui,-apple-system,sans-serif;
   --greca:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='20' viewBox='0 0 48 20'%3E%3Cg fill='%23FFD7BE'%3E%3Cpath d='M0 18h48v2H0z'/%3E%3Cpath d='M8 18V14h4v-4h4V6h16v4h4v4h4v4z'/%3E%3C/g%3E%3C/svg%3E");
+  --topo:62px;
 }
 *{box-sizing:border-box}
-html{background:#1A0403}
-body{
-  margin:0; color:var(--creme); font-family:var(--fonte);
-  background:
-    radial-gradient(1100px 620px at 50% -8%, rgba(200,9,16,.42), transparent 62%),
-    radial-gradient(760px 520px at 12% 32%, rgba(255,120,30,.14), transparent 60%),
-    radial-gradient(760px 520px at 88% 72%, rgba(200,9,16,.18), transparent 60%),
-    #1A0403;
-  background-attachment:fixed;
-  padding-bottom:env(safe-area-inset-bottom);
-  -webkit-text-size-adjust:100%;
-}
+html{background:#140303;scroll-behavior:smooth;scroll-padding-top:var(--topo)}
+body{margin:0;color:var(--creme);font-family:var(--fonte);background:#140303;
+     -webkit-text-size-adjust:100%;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+.env{width:min(1180px,100%);margin:0 auto;padding:0 20px}
 
-.faixa{height:20px;background-image:var(--greca);background-repeat:repeat-x;
-       background-position:center;opacity:.72}
+.faixa{height:18px;background-image:var(--greca);background-repeat:repeat-x;
+       background-position:center;opacity:.5}
 .faixa.base{transform:scaleY(-1)}
-.faixa.topo{margin-top:env(safe-area-inset-top)}
 
-.palco{max-width:1180px;margin:0 auto;padding:22px 18px 0;
-       display:grid;grid-template-columns:1fr;gap:22px;align-items:start}
-
-.cartaz{margin:0;line-height:0;border-radius:16px;overflow:hidden;
-        box-shadow:0 18px 50px rgba(0,0,0,.6), 0 0 0 1px var(--borda)}
-.cartaz img{width:100%;height:auto;display:block}
-
-.arte2{margin:0;position:relative;line-height:0;border-radius:16px;overflow:hidden;
-       box-shadow:0 18px 50px rgba(0,0,0,.6), 0 0 0 1px var(--borda)}
-.arte2 img{width:100%;height:auto;display:block}
-.hit{position:absolute;display:block;border-radius:22px;
-     -webkit-tap-highlight-color:transparent;transition:transform .12s ease}
-.hit:active{transform:scale(.985)}
-.hit:focus-visible{outline:3px solid var(--creme-forte);outline-offset:3px}
-.b1{left:5.926%;top:32.889%;width:88.241%;height:12.593%}
-.b2{left:5.926%;top:47.481%;width:88.241%;height:12.741%}
-.b3{left:5.926%;top:62.148%;width:88.241%;height:12.889%}
-.b4{left:5.926%;top:77.037%;width:88.241%;height:12.741%}
-
-.acoes{display:none}
-.chamada{font-size:clamp(30px,2.6vw,43px);font-weight:800;line-height:1.08;
-         margin:0 0 14px;color:var(--creme-forte);letter-spacing:-.6px}
-.sub{margin:0 0 26px;font-size:16px;font-weight:400;color:rgba(255,215,190,.78)}
-.divisor{height:20px;background-image:var(--greca);background-repeat:repeat-x;
-         opacity:.6;margin:0 0 28px}
-
-.botao{display:flex;align-items:center;gap:18px;padding:17px 24px;margin-bottom:14px;
-       border:1.5px solid var(--borda);border-radius:20px;text-decoration:none;
-       background:linear-gradient(180deg, rgba(56,5,2,.78), rgba(26,4,3,.88));
-       color:var(--creme-forte);font-size:20px;font-weight:700;
-       transition:transform .14s ease, border-color .14s ease, box-shadow .14s ease}
-.botao svg{width:34px;height:34px;flex:0 0 34px}
-@media (hover:hover){
-  .botao:hover{transform:translateX(5px);border-color:var(--creme);
-               box-shadow:0 10px 30px rgba(0,0,0,.5)}
-}
-.botao:focus-visible{outline:3px solid var(--creme-forte);outline-offset:3px}
-
-.rodape{max-width:1180px;margin:0 auto;padding:30px 18px 34px;text-align:center}
-.prendas{display:flex;align-items:center;justify-content:center;gap:28px;
-         margin:0 auto 26px;max-width:520px;color:var(--creme)}
-.prendas svg{width:40px;height:40px;opacity:.8;flex:0 0 40px}
-.prendas::before,.prendas::after{content:"";flex:1 1 auto;height:1px;
-         background:linear-gradient(90deg,transparent,rgba(255,215,190,.45))}
-.prendas::after{background:linear-gradient(90deg,rgba(255,215,190,.45),transparent)}
-.baixar{display:inline-block;padding:15px 30px;border-radius:999px;
-        border:1.5px solid var(--borda);background:rgba(0,0,0,.3);
-        color:var(--creme-forte);font-size:15px;font-weight:600;text-decoration:none;
-        transition:background .14s ease, border-color .14s ease}
-@media (hover:hover){.baixar:hover{background:rgba(255,215,190,.12);border-color:var(--creme)}}
-.local{display:none;margin:20px 0 0;font-size:12px;letter-spacing:.3em;text-transform:uppercase;
-       color:rgba(255,215,190,.45)}
-
-
-/* ---------- capa: toque para abrir ---------- */
+/* ===== CAPA ===== */
 .capa{display:none}
-html.js .capa{
-  display:flex;position:fixed;inset:0;z-index:50;
-  flex-direction:column;align-items:center;justify-content:center;
-  gap:24px;padding:36px 22px;text-align:center;
-  background:linear-gradient(rgba(26,4,3,.90),rgba(26,4,3,.96)),
-             url("capa.jpg") center/cover no-repeat;
+html.js .capa{display:flex;position:fixed;inset:0;z-index:90;flex-direction:column;
+  align-items:center;justify-content:center;gap:22px;padding:36px 22px;text-align:center;
+  background:linear-gradient(rgba(20,3,3,.86),rgba(20,3,3,.95)),
+             url("fotos/hero-cel.jpg") center/cover no-repeat;
   transition:opacity .75s ease, visibility .75s}
 html.js.aberto .capa{opacity:0;visibility:hidden;pointer-events:none}
 html.js:not(.aberto) body{overflow:hidden}
+.capa-greca{width:min(290px,66vw);height:18px;background-image:var(--greca);
+  background-repeat:repeat-x;background-position:center;opacity:.65}
 .capa-marca{margin:0;max-width:12ch;font-size:clamp(28px,6.4vw,46px);font-weight:800;
-            line-height:1.08;letter-spacing:-.6px;color:var(--creme-forte)}
-.capa-greca{width:min(300px,68vw);height:20px;background-image:var(--greca);
-            background-repeat:repeat-x;background-position:center;opacity:.7}
-.abrir{display:inline-flex;align-items:center;gap:13px;padding:19px 34px;
-       border-radius:999px;border:2px solid var(--creme);background:rgba(0,0,0,.35);
-       color:var(--creme-forte);font:700 18px/1 var(--fonte);cursor:pointer;
-       animation:pulsa 2.4s ease-in-out infinite}
+  line-height:1.08;letter-spacing:-.6px;color:var(--creme-forte)}
+.abrir{display:inline-flex;align-items:center;gap:13px;padding:19px 34px;border-radius:999px;
+  border:2px solid var(--creme);background:rgba(0,0,0,.35);color:var(--creme-forte);
+  font:700 18px/1 var(--fonte);cursor:pointer;animation:pulsa 2.4s ease-in-out infinite}
 .abrir svg{width:23px;height:23px;flex:0 0 23px}
-@keyframes pulsa{0%,100%{box-shadow:0 0 0 0 rgba(255,215,190,.42)}
+@keyframes pulsa{0%,100%{box-shadow:0 0 0 0 rgba(255,215,190,.4)}
                  70%{box-shadow:0 0 0 20px rgba(255,215,190,0)}}
 .capa-nota{margin:0;font-size:12px;letter-spacing:.2em;text-transform:uppercase;
-           color:rgba(255,215,190,.58)}
+  color:rgba(255,215,190,.55)}
 
-/* ---------- botao de som ---------- */
-.som{display:none;position:fixed;z-index:40;
-     right:calc(16px + env(safe-area-inset-right));
-     bottom:calc(16px + env(safe-area-inset-bottom));
-     width:54px;height:54px;border-radius:50%;align-items:center;
-     justify-content:center;border:1.5px solid var(--borda);
-     background:rgba(26,4,3,.88);color:var(--creme);cursor:pointer}
+/* ===== CABECALHO ===== */
+.topo{position:fixed;top:0;left:0;right:0;z-index:60;height:var(--topo);
+  display:flex;align-items:center;background:rgba(20,3,3,.92);
+  border-bottom:1px solid var(--borda);backdrop-filter:blur(10px)}
+.topo .env{display:flex;align-items:center;gap:18px}
+.marca{font-weight:800;font-size:14px;letter-spacing:-.2px;color:var(--creme-forte);
+  text-decoration:none;white-space:nowrap}
+.marca span{color:var(--brasa)}
+.nav{display:none;gap:24px;margin-left:auto;font-size:14px;font-weight:500}
+.nav a{text-decoration:none;color:rgba(255,215,190,.82);padding:6px 0;
+  border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+@media(hover:hover){.nav a:hover{color:var(--creme-forte);border-bottom-color:var(--brasa)}}
+.zap{margin-left:auto;display:inline-flex;align-items:center;gap:8px;padding:10px 18px;
+  border-radius:999px;background:#1FA855;color:#fff;font-size:14px;font-weight:700;
+  text-decoration:none;white-space:nowrap;transition:transform .14s,filter .14s}
+.zap svg{width:17px;height:17px}
+@media(hover:hover){.zap:hover{transform:translateY(-1px);filter:brightness(1.1)}}
+@media(min-width:900px){.nav{display:flex}.zap{margin-left:0}}
+
+/* ===== HERO ===== */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;
+  padding:calc(var(--topo) + 20px) 0 56px;overflow:hidden}
+.hero-img{position:absolute;inset:0;z-index:0}
+.hero-img img{width:100%;height:100%;object-fit:cover}
+.hero-img::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(20,3,3,.74) 0%,rgba(20,3,3,.4) 34%,
+             rgba(20,3,3,.86) 76%,#140303 100%)}
+.hero .env{position:relative;z-index:1}
+.selo{display:inline-flex;align-items:center;gap:9px;padding:7px 15px;border-radius:999px;
+  border:1px solid var(--borda);background:rgba(0,0,0,.4);font-size:11px;font-weight:600;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--creme)}
+.ponto{width:7px;height:7px;border-radius:50%;background:#2BD96A;
+  box-shadow:0 0 0 0 rgba(43,217,106,.6);animation:bate 2s infinite}
+@keyframes bate{70%{box-shadow:0 0 0 9px rgba(43,217,106,0)}100%{box-shadow:0 0 0 0 rgba(43,217,106,0)}}
+.hero h1{margin:18px 0 0;font-size:clamp(40px,9vw,92px);font-weight:800;line-height:.95;
+  letter-spacing:-2px;color:var(--creme-forte);text-shadow:0 4px 30px rgba(0,0,0,.6)}
+.hero h1 em{display:block;font-style:normal;font-size:.4em;letter-spacing:.14em;
+  font-weight:600;color:var(--creme);margin-top:12px;text-transform:uppercase}
+.hero p{margin:22px 0 0;max-width:38ch;font-size:clamp(16px,2vw,19px);line-height:1.55;
+  color:rgba(255,241,231,.88)}
+.acoes-hero{display:flex;flex-wrap:wrap;gap:13px;margin-top:30px}
+.bt{display:inline-flex;align-items:center;gap:11px;padding:16px 28px;border-radius:999px;
+  font-size:16px;font-weight:700;text-decoration:none;border:1.5px solid transparent;
+  transition:transform .14s,filter .14s,background .14s,border-color .14s}
+.bt svg{width:20px;height:20px;flex:0 0 20px}
+.bt-verde{background:#1FA855;color:#fff}
+.bt-linha{border-color:var(--borda);background:rgba(0,0,0,.35);color:var(--creme-forte)}
+@media(hover:hover){.bt-verde:hover{transform:translateY(-2px);filter:brightness(1.1)}
+  .bt-linha:hover{border-color:var(--creme);background:rgba(255,215,190,.1)}}
+
+/* ===== SECOES ===== */
+.sec{padding:76px 0}
+.sec-escura{background:var(--vinho2)}
+.rotulo{display:flex;align-items:center;gap:13px;font-size:11px;font-weight:700;
+  letter-spacing:.26em;text-transform:uppercase;color:var(--brasa);margin:0 0 14px}
+.rotulo::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--borda),transparent)}
+h2{margin:0 0 20px;font-size:clamp(28px,4.4vw,46px);font-weight:800;line-height:1.08;
+  letter-spacing:-1px;color:var(--creme-forte)}
+.texto{font-size:17px;line-height:1.72;color:rgba(255,215,190,.86);max-width:62ch}
+.texto p{margin:0 0 17px}
+
+.duas{display:grid;gap:40px;align-items:center}
+@media(min-width:900px){.duas{grid-template-columns:1.05fr .95fr;gap:56px}}
+.moldura{margin:0;border-radius:14px;overflow:hidden;border:1px solid var(--borda);
+  box-shadow:0 20px 56px rgba(0,0,0,.5)}
+
+.pilares{display:grid;gap:16px;margin-top:38px}
+@media(min-width:680px){.pilares{grid-template-columns:repeat(3,1fr)}}
+.pilar{padding:26px 22px;border:1px solid var(--borda);border-radius:14px;
+  background:linear-gradient(180deg,rgba(255,215,190,.05),rgba(0,0,0,.2))}
+.pilar svg{width:32px;height:32px;color:var(--creme);opacity:.85;margin-bottom:14px}
+.pilar h3{margin:0 0 7px;font-size:17px;font-weight:700;color:var(--creme-forte)}
+.pilar p{margin:0;font-size:14.5px;line-height:1.6;color:rgba(255,215,190,.72)}
+
+/* ouca */
+.spot{border-radius:14px;overflow:hidden;border:1px solid var(--borda)}
+.spot iframe{display:block;width:100%;height:352px;border:0}
+.video{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--borda);
+  cursor:pointer;background:#000}
+.video img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform .5s ease,opacity .3s}
+.video iframe{display:block;width:100%;aspect-ratio:16/9;border:0}
+.play{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:14px;background:rgba(20,3,3,.4)}
+.play-bola{width:76px;height:76px;border-radius:50%;background:var(--brasa);display:grid;
+  place-items:center;box-shadow:0 10px 36px rgba(0,0,0,.5);transition:transform .2s}
+.play-bola svg{width:30px;height:30px;color:#fff;margin-left:4px}
+.play span{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--creme-forte);text-shadow:0 2px 12px rgba(0,0,0,.8)}
+@media(hover:hover){.video:hover .play-bola{transform:scale(1.09)}
+  .video:hover img{transform:scale(1.04)}}
+.media-dupla{display:grid;gap:26px;margin-top:30px}
+@media(min-width:980px){.media-dupla{grid-template-columns:1fr 1fr;align-items:start}}
+
+/* galeria */
+.galeria{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:30px}
+@media(min-width:680px){.galeria{grid-template-columns:repeat(3,1fr);gap:13px}}
+@media(min-width:1000px){.galeria{grid-template-columns:repeat(4,1fr)}}
+.galeria button{padding:0;border:1px solid var(--borda);border-radius:11px;overflow:hidden;
+  background:#000;cursor:pointer;aspect-ratio:3/4;transition:border-color .16s}
+.galeria img{width:100%;height:100%;object-fit:cover;transition:transform .45s ease,opacity .3s}
+@media(hover:hover){.galeria button:hover{border-color:var(--creme)}
+  .galeria button:hover img{transform:scale(1.07);opacity:.86}}
+
+/* lupa */
+.lupa{position:fixed;inset:0;z-index:95;display:none;align-items:center;justify-content:center;
+  background:rgba(10,2,2,.95);padding:46px 14px}
+.lupa.on{display:flex}
+.lupa img{max-width:100%;max-height:86vh;border-radius:10px;object-fit:contain}
+.lupa button{position:absolute;border:1px solid var(--borda);background:rgba(20,3,3,.9);
+  color:var(--creme);width:50px;height:50px;border-radius:50%;cursor:pointer;
+  display:grid;place-items:center;font-size:22px;line-height:1}
+.lupa .fechar{top:14px;right:14px}
+.lupa .ant{left:12px;top:50%;transform:translateY(-50%)}
+.lupa .prox{right:12px;top:50%;transform:translateY(-50%)}
+
+/* contratar */
+.contato{display:grid;gap:13px;max-width:620px;margin-top:32px}
+.linha{display:flex;align-items:center;gap:17px;padding:17px 22px;border-radius:16px;
+  border:1px solid var(--borda);text-decoration:none;color:var(--creme-forte);
+  font-size:17px;font-weight:600;
+  background:linear-gradient(180deg,rgba(255,215,190,.05),rgba(0,0,0,.25));
+  transition:transform .14s,border-color .14s}
+.linha svg{width:30px;height:30px;flex:0 0 30px}
+@media(hover:hover){.linha:hover{transform:translateX(5px);border-color:var(--creme)}}
+.destaque{background:linear-gradient(135deg,#1FA855,#17803F);border-color:transparent;color:#fff}
+
+/* rodape */
+.rodape{padding:52px 0 40px;border-top:1px solid var(--borda);text-align:center}
+.prendas{display:flex;align-items:center;justify-content:center;gap:26px;
+  margin:0 auto 26px;max-width:500px;color:var(--creme)}
+.prendas svg{width:38px;height:38px;opacity:.7;flex:0 0 38px}
+.prendas::before,.prendas::after{content:"";flex:1 1 auto;height:1px;
+  background:linear-gradient(90deg,transparent,var(--borda))}
+.prendas::after{background:linear-gradient(90deg,var(--borda),transparent)}
+.baixar{display:inline-block;padding:14px 28px;border-radius:999px;border:1.5px solid var(--borda);
+  background:rgba(0,0,0,.3);color:var(--creme-forte);font-size:14.5px;font-weight:600;
+  text-decoration:none;transition:background .14s,border-color .14s}
+@media(hover:hover){.baixar:hover{background:rgba(255,215,190,.1);border-color:var(--creme)}}
+.local{margin:22px 0 0;font-size:11px;letter-spacing:.26em;text-transform:uppercase;
+  color:rgba(255,215,190,.4)}
+
+/* som */
+.som{display:none;position:fixed;z-index:70;
+  right:calc(16px + env(safe-area-inset-right));
+  bottom:calc(16px + env(safe-area-inset-bottom));
+  width:52px;height:52px;border-radius:50%;align-items:center;justify-content:center;
+  border:1px solid var(--borda);background:rgba(20,3,3,.92);color:var(--creme);
+  cursor:pointer;backdrop-filter:blur(8px)}
 html.js.aberto .som{display:flex}
-.som svg{width:24px;height:24px}
+.som svg{width:23px;height:23px}
 .som .off{display:none}
 .som.mudo .on{display:none}
 .som.mudo .off{display:block}
 
-/* entrada do conteudo */
-html.js.aberto .palco>*,html.js.aberto .rodape{
-  animation:sobe .7s cubic-bezier(.22,.9,.3,1) backwards}
-html.js.aberto .palco>*:nth-child(2){animation-delay:.09s}
-html.js.aberto .palco>*:nth-child(3){animation-delay:.09s}
-html.js.aberto .rodape{animation-delay:.18s}
-@keyframes sobe{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
-
-@media (min-width:900px){
-  .palco{grid-template-columns:minmax(0,46%) minmax(0,1fr);gap:46px;
-         padding:40px 28px 0;align-items:center}
-  .acoes{display:block}
-  .arte2{display:none}
-  .rodape{padding-top:42px}
-  .local{display:block}
-}
-@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+:focus-visible{outline:3px solid var(--creme-forte);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
@@ -184,114 +248,273 @@ html.js.aberto .rodape{animation-delay:.18s}
   <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="m16 9 5 6M21 9l-5 6"/></svg>
 </button>
 
-<div class="faixa topo" role="presentation"></div>
-
-<main class="palco">
-
-  <figure class="cartaz">
-    <img src="capa.jpg" width="2160" height="2700"
-         alt="Grupo Eco do Pampa das Missões. Agenda aberta para bailes, festas e eventos.">
-  </figure>
-
-  <section class="acoes">
-    <h1 class="chamada">Leve o Eco do Pampa das Missões para o seu evento</h1>
-    <p class="sub">Agenda aberta para bailes, festas e eventos.</p>
-    <div class="divisor" role="presentation"></div>
-
-    <a class="botao" target="_blank" rel="noopener"
-       href="https://wa.me/555596073525?text=Ol%C3%A1%21%20Vi%20o%20convite%20do%20Eco%20do%20Pampa%20e%20quero%20saber%20sobre%20contrata%C3%A7%C3%A3o.">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#25D366"/><path fill="#fff" d="M12.04 5.3a6.63 6.63 0 0 0-5.65 10.1l-.72 2.63 2.7-.71a6.63 6.63 0 1 0 3.67-12.02Zm0 1.2a5.43 5.43 0 1 1-2.84 10.06l-.2-.12-1.6.42.43-1.56-.13-.2A5.43 5.43 0 0 1 12.04 6.5Zm-2.3 2.46c-.12 0-.3.04-.47.22-.16.18-.62.6-.62 1.46s.63 1.7.72 1.82c.09.12 1.23 1.96 3.04 2.67 1.5.59 1.81.47 2.14.44.33-.03 1.06-.43 1.21-.85.15-.42.15-.78.1-.85-.04-.07-.16-.11-.33-.2-.18-.09-1.06-.52-1.22-.58-.16-.06-.28-.09-.4.09-.12.18-.46.58-.56.7-.1.12-.21.13-.39.04a4.88 4.88 0 0 1-1.43-.88 5.4 5.4 0 0 1-1-1.24c-.1-.18-.01-.28.08-.37.08-.08.18-.21.27-.32.09-.11.12-.19.18-.31.06-.12.03-.23-.02-.32-.04-.09-.4-.97-.55-1.33-.14-.34-.29-.3-.4-.3Z"/></svg>
-      Contratar pelo WhatsApp
+<header class="topo">
+  <div class="env">
+    <a class="marca" href="#inicio">ECO DO PAMPA <span>·</span> DAS MISSÕES</a>
+    <nav class="nav">
+      <a href="#banda">A banda</a>
+      <a href="#ouca">Ouça</a>
+      <a href="#fotos">Fotos</a>
+      <a href="#contratar">Contratar</a>
+    </nav>
+    <a class="zap" target="_blank" rel="noopener"
+       href="https://wa.me/555596073525?text=Ol%C3%A1%21%20Vi%20o%20site%20do%20Eco%20do%20Pampa%20e%20quero%20saber%20sobre%20contrata%C3%A7%C3%A3o.">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2.5A9.5 9.5 0 0 0 3.9 16.9L2.6 21.4l4.63-1.22a9.5 9.5 0 1 0 4.81-17.68Zm0 1.9a7.6 7.6 0 1 1-3.97 14.08l-.28-.17-2.27.6.6-2.2-.19-.29A7.6 7.6 0 0 1 12.04 4.4Zm-3.2 3.44c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.06s.89 2.39 1.01 2.56c.13.16 1.73 2.74 4.26 3.73 2.1.83 2.53.67 2.99.62.46-.04 1.48-.6 1.69-1.19.21-.58.21-1.08.15-1.19-.06-.1-.23-.16-.47-.28-.25-.12-1.48-.73-1.71-.81-.23-.09-.4-.13-.56.12-.17.25-.65.81-.79.98-.15.16-.29.18-.54.06a6.8 6.8 0 0 1-2-1.24 7.5 7.5 0 0 1-1.39-1.73c-.15-.25-.02-.39.11-.51.11-.12.25-.3.38-.45.12-.15.16-.26.25-.43.08-.17.04-.32-.02-.45-.06-.12-.56-1.36-.77-1.86-.2-.48-.41-.42-.56-.42Z"/></svg>
+      Contratar
     </a>
-
-    <a class="botao" target="_blank" rel="noopener"
-       href="https://open.spotify.com/artist/44MVtI4vC5U4y5AMYRiIhb">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1ED760"/><path fill="#000" d="M17.1 10.9a.9.9 0 0 1-1.23.3 10.4 10.4 0 0 0-8.1-.92.9.9 0 1 1-.5-1.73 12.2 12.2 0 0 1 9.5 1.1.9.9 0 0 1 .33 1.25Zm-1.3 2.86a.75.75 0 0 1-1.03.25 8.6 8.6 0 0 0-6.5-.76.75.75 0 1 1-.4-1.45 10.1 10.1 0 0 1 7.68.92c.35.21.47.67.25 1.04Zm-1.2 2.72a.6.6 0 0 1-.83.2 6.9 6.9 0 0 0-5.1-.6.6.6 0 0 1-.32-1.16 8.1 8.1 0 0 1 6.05.73c.28.17.37.54.2.83Z"/></svg>
-      Ouvir no Spotify
-    </a>
-
-    <a class="botao" target="_blank" rel="noopener"
-       href="https://www.youtube.com/@Ecodopampadasmissoes">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="4.6" width="22" height="14.8" rx="4.4" fill="#FF0000"/><path fill="#fff" d="M10.1 8.9v6.2L15.4 12z"/></svg>
-      Assistir no YouTube
-    </a>
-
-    <a class="botao" target="_blank" rel="noopener"
-       href="https://www.instagram.com/grupoecodopampadasmissoes/">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="ig" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FFC107"/><stop offset=".45" stop-color="#F44336"/><stop offset="1" stop-color="#9C27B0"/></linearGradient></defs><rect x="1.5" y="1.5" width="21" height="21" rx="6.4" fill="url(#ig)"/><circle cx="12" cy="12" r="4.6" fill="none" stroke="#fff" stroke-width="1.9"/><circle cx="17.5" cy="6.5" r="1.3" fill="#fff"/></svg>
-      Seguir no Instagram
-    </a>
-  </section>
-
-  <figure class="arte2">
-    <img src="links.jpg" width="2160" height="2700" loading="lazy"
-         alt="Leve o Eco do Pampa das Missões para o seu evento. Toque nos botões abaixo.">
-    <a class="hit b1" aria-label="Contratar pelo WhatsApp" target="_blank" rel="noopener"
-       href="https://wa.me/555596073525?text=Ol%C3%A1%21%20Vi%20o%20convite%20do%20Eco%20do%20Pampa%20e%20quero%20saber%20sobre%20contrata%C3%A7%C3%A3o."></a>
-    <a class="hit b2" aria-label="Ouvir no Spotify" target="_blank" rel="noopener"
-       href="https://open.spotify.com/artist/44MVtI4vC5U4y5AMYRiIhb"></a>
-    <a class="hit b3" aria-label="Assistir no YouTube" target="_blank" rel="noopener"
-       href="https://www.youtube.com/@Ecodopampadasmissoes"></a>
-    <a class="hit b4" aria-label="Seguir no Instagram" target="_blank" rel="noopener"
-       href="https://www.instagram.com/grupoecodopampadasmissoes/"></a>
-  </figure>
-
-</main>
-
-<div class="rodape">
-  <div class="prendas" role="presentation">
-    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="15" cy="13.5" rx="7" ry="2.2"/><path d="M8 13.5v2.6a7 7 0 0 0 14 0v-2.6"/><path d="m19.8 11.6 5.4-6.9"/><circle cx="26" cy="3.8" r="1.5"/></svg>
-    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="8" width="6" height="16" rx="1.6"/><rect x="23.5" y="8" width="6" height="16" rx="1.6"/><path d="M8.5 9.5h15v13h-15z"/><path d="M12 9.5v13M15.3 9.5v13M18.6 9.5v13"/><circle cx="5.5" cy="12" r="1.1"/><circle cx="5.5" cy="16" r="1.1"/><circle cx="26.5" cy="12" r="1.1"/></svg>
-    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="m16 4 3.4 7.6 8.1.9-6.1 5.5 1.7 8-7.1-4.1-7.1 4.1 1.7-8-6.1-5.5 8.1-.9Z"/></svg>
-    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10 18c-.6-4 .2-7.4 1-9.2.5-1.1 1.7-1.6 2.8-1.1 1.4.6 3 .6 4.4 0 1.1-.5 2.3 0 2.8 1.1.8 1.8 1.6 5.2 1 9.2"/><path d="M8.6 16.6C5.3 17.4 3 18.7 3 20.2 3 22.3 8.8 24 16 24s13-1.7 13-3.8c0-1.5-2.3-2.8-5.6-3.6"/></svg>
-    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.6 26.4c-1.6-5.6-1.6-10.2.8-13.6a8.4 8.4 0 0 1 13.2 0c2.4 3.4 2.4 8 .8 13.6"/><circle cx="10.6" cy="12.2" r=".95"/><circle cx="13.6" cy="8.7" r=".95"/><circle cx="18.4" cy="8.7" r=".95"/><circle cx="21.4" cy="12.2" r=".95"/></svg>
   </div>
+</header>
 
-  <a class="baixar" href="convite-eco-do-pampa.pdf" download>Baixar o convite em PDF</a>
-  <p class="local">Missões, RS</p>
-</div>
+<section class="hero" id="inicio">
+  <div class="hero-img">
+    <picture>
+      <source media="(min-width:760px)" srcset="fotos/hero.jpg">
+      <img src="fotos/hero-cel.jpg" width="1800" height="1012"
+           alt="Grupo Eco do Pampa das Missões tocando ao vivo: gaita, baixo, guitarra e voz, todos de pilcha.">
+    </picture>
+  </div>
+  <div class="env">
+    <span class="selo"><i class="ponto"></i> Agenda aberta</span>
+    <h1>Eco do Pampa<em>das Missões</em></h1>
+    <p>Música gaúcha de baile, tocada ao vivo. Gaita, baixo, guitarra e bateria para encher a pista em bailes, festas e eventos nas Missões e região.</p>
+    <div class="acoes-hero">
+      <a class="bt bt-verde" target="_blank" rel="noopener"
+         href="https://wa.me/555596073525?text=Ol%C3%A1%21%20Vi%20o%20site%20do%20Eco%20do%20Pampa%20e%20quero%20saber%20sobre%20contrata%C3%A7%C3%A3o.">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2.5A9.5 9.5 0 0 0 3.9 16.9L2.6 21.4l4.63-1.22a9.5 9.5 0 1 0 4.81-17.68Zm0 1.9a7.6 7.6 0 1 1-3.97 14.08l-.28-.17-2.27.6.6-2.2-.19-.29A7.6 7.6 0 0 1 12.04 4.4Zm-3.2 3.44c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.06s.89 2.39 1.01 2.56c.13.16 1.73 2.74 4.26 3.73 2.1.83 2.53.67 2.99.62.46-.04 1.48-.6 1.69-1.19.21-.58.21-1.08.15-1.19-.06-.1-.23-.16-.47-.28-.25-.12-1.48-.73-1.71-.81-.23-.09-.4-.13-.56.12-.17.25-.65.81-.79.98-.15.16-.29.18-.54.06a6.8 6.8 0 0 1-2-1.24 7.5 7.5 0 0 1-1.39-1.73c-.15-.25-.02-.39.11-.51.11-.12.25-.3.38-.45.12-.15.16-.26.25-.43.08-.17.04-.32-.02-.45-.06-.12-.56-1.36-.77-1.86-.2-.48-.41-.42-.56-.42Z"/></svg>
+        Contratar pelo WhatsApp
+      </a>
+      <a class="bt bt-linha" href="#ouca">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg>
+        Ouvir a banda
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="faixa" role="presentation"></div>
+
+<section class="sec" id="banda">
+  <div class="env duas">
+    <div>
+      <p class="rotulo">A banda</p>
+      <h2>Baile de verdade, do jeito que a gente sabe fazer</h2>
+      <div class="texto">
+        <p>O Eco do Pampa das Missões é um grupo de música gaúcha nascido no coração das Missões, no Rio Grande do Sul. Gaita, baixo, guitarra, bateria e voz, pilcha no corpo e repertório pensado para uma coisa só: não deixar a pista vazia.</p>
+        <p>São os clássicos que todo mundo canta junto, o que está tocando agora e as nossas próprias músicas no meio. A primeira delas já está gravada no nosso primeiro CD.</p>
+        <p>Tocamos em bailes, festas de CTG, aniversários, casamentos e eventos em toda a região.</p>
+      </div>
+      <div class="pilares">
+        <div class="pilar">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="8" width="6" height="16" rx="1.6"/><rect x="23.5" y="8" width="6" height="16" rx="1.6"/><path d="M8.5 9.5h15v13h-15z"/><path d="M12 9.5v13M15.3 9.5v13M18.6 9.5v13"/><circle cx="5.5" cy="12" r="1.1"/><circle cx="5.5" cy="16" r="1.1"/></svg>
+          <h3>Ao vivo, sempre</h3>
+          <p>Banda completa tocando de verdade. Nada de playback.</p>
+        </div>
+        <div class="pilar">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 29s10-7.6 10-14.6A10 10 0 0 0 6 14.4C6 21.4 16 29 16 29Z"/><circle cx="16" cy="14" r="3.6"/></svg>
+          <h3>Missões e região</h3>
+          <p>Base nas Missões, RS. Atendemos toda a região.</p>
+        </div>
+        <div class="pilar">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6.5" width="24" height="21" rx="3"/><path d="M4 12.5h24M11 3.5v6M21 3.5v6"/><path d="m12.5 19.5 2.5 2.5 5-5"/></svg>
+          <h3>Agenda aberta</h3>
+          <p>Bailes, festas de CTG, casamentos e eventos.</p>
+        </div>
+      </div>
+    </div>
+    <figure class="moldura">
+      <img src="fotos/banda.jpg" width="1500" height="844" loading="lazy"
+           alt="A banda no palco durante um baile, com gaita, baixo e voz.">
+    </figure>
+  </div>
+</section>
 
 <div class="faixa base" role="presentation"></div>
 
+<section class="sec sec-escura" id="ouca">
+  <div class="env">
+    <p class="rotulo">Ouça e assista</p>
+    <h2>A banda tocando</h2>
+    <div class="media-dupla">
+      <div class="spot">
+        <iframe loading="lazy" title="Grupo Eco do Pampa das Missões no Spotify"
+          src="https://open.spotify.com/embed/artist/44MVtI4vC5U4y5AMYRiIhb?utm_source=generator&amp;theme=0"
+          allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+      </div>
+      <div class="video" id="video" data-id="E49eAVOyLUo" role="button" tabindex="0"
+           aria-label="Assistir Bailanta com Eco do Pampa das Missões no YouTube">
+        <img src="fotos/video.jpg" width="1000" height="563" loading="lazy"
+             alt="Bailanta com o Eco do Pampa das Missões.">
+        <div class="play">
+          <div class="play-bola"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15L20 12z"/></svg></div>
+          <span>Bailanta ao vivo</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="fotos">
+  <div class="env">
+    <p class="rotulo">Fotos</p>
+    <h2>Do palco</h2>
+    <div class="galeria" id="galeria"></div>
+  </div>
+</section>
+
+<div class="faixa" role="presentation"></div>
+
+<section class="sec sec-escura" id="contratar">
+  <div class="env">
+    <p class="rotulo">Contratar</p>
+    <h2>Leve o Eco do Pampa para o seu evento</h2>
+    <div class="texto"><p>Chame no WhatsApp com a data e o local do evento que a gente retorna com tudo certinho.</p></div>
+    <div class="contato">
+      <a class="linha destaque" target="_blank" rel="noopener"
+         href="https://wa.me/555596073525?text=Ol%C3%A1%21%20Vi%20o%20site%20do%20Eco%20do%20Pampa%20e%20quero%20saber%20sobre%20contrata%C3%A7%C3%A3o.">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2.5A9.5 9.5 0 0 0 3.9 16.9L2.6 21.4l4.63-1.22a9.5 9.5 0 1 0 4.81-17.68Zm0 1.9a7.6 7.6 0 1 1-3.97 14.08l-.28-.17-2.27.6.6-2.2-.19-.29A7.6 7.6 0 0 1 12.04 4.4Zm-3.2 3.44c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.06s.89 2.39 1.01 2.56c.13.16 1.73 2.74 4.26 3.73 2.1.83 2.53.67 2.99.62.46-.04 1.48-.6 1.69-1.19.21-.58.21-1.08.15-1.19-.06-.1-.23-.16-.47-.28-.25-.12-1.48-.73-1.71-.81-.23-.09-.4-.13-.56.12-.17.25-.65.81-.79.98-.15.16-.29.18-.54.06a6.8 6.8 0 0 1-2-1.24 7.5 7.5 0 0 1-1.39-1.73c-.15-.25-.02-.39.11-.51.11-.12.25-.3.38-.45.12-.15.16-.26.25-.43.08-.17.04-.32-.02-.45-.06-.12-.56-1.36-.77-1.86-.2-.48-.41-.42-.56-.42Z"/></svg>
+        Contratar pelo WhatsApp
+      </a>
+      <a class="linha" target="_blank" rel="noopener" href="https://open.spotify.com/artist/44MVtI4vC5U4y5AMYRiIhb">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1ED760"/><path fill="#000" d="M17.1 10.9a.9.9 0 0 1-1.23.3 10.4 10.4 0 0 0-8.1-.92.9.9 0 1 1-.5-1.73 12.2 12.2 0 0 1 9.5 1.1.9.9 0 0 1 .33 1.25Zm-1.3 2.86a.75.75 0 0 1-1.03.25 8.6 8.6 0 0 0-6.5-.76.75.75 0 1 1-.4-1.45 10.1 10.1 0 0 1 7.68.92c.35.21.47.67.25 1.04Zm-1.2 2.72a.6.6 0 0 1-.83.2 6.9 6.9 0 0 0-5.1-.6.6.6 0 0 1-.32-1.16 8.1 8.1 0 0 1 6.05.73c.28.17.37.54.2.83Z"/></svg>
+        Ouvir no Spotify
+      </a>
+      <a class="linha" target="_blank" rel="noopener" href="https://www.youtube.com/@Ecodopampadasmissoes">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="4.6" width="22" height="14.8" rx="4.4" fill="#FF0000"/><path fill="#fff" d="M10.1 8.9v6.2L15.4 12z"/></svg>
+        Assistir no YouTube
+      </a>
+      <a class="linha" target="_blank" rel="noopener" href="https://www.instagram.com/grupoecodopampadasmissoes/">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="ig" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FFC107"/><stop offset=".45" stop-color="#F44336"/><stop offset="1" stop-color="#9C27B0"/></linearGradient></defs><rect x="1.5" y="1.5" width="21" height="21" rx="6.4" fill="url(#ig)"/><circle cx="12" cy="12" r="4.6" fill="none" stroke="#fff" stroke-width="1.9"/><circle cx="17.5" cy="6.5" r="1.3" fill="#fff"/></svg>
+        Seguir no Instagram
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="rodape">
+  <div class="env">
+    <div class="prendas" role="presentation">
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="15" cy="13.5" rx="7" ry="2.2"/><path d="M8 13.5v2.6a7 7 0 0 0 14 0v-2.6"/><path d="m19.8 11.6 5.4-6.9"/><circle cx="26" cy="3.8" r="1.5"/></svg>
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="8" width="6" height="16" rx="1.6"/><rect x="23.5" y="8" width="6" height="16" rx="1.6"/><path d="M8.5 9.5h15v13h-15z"/><path d="M12 9.5v13M15.3 9.5v13M18.6 9.5v13"/><circle cx="5.5" cy="12" r="1.1"/><circle cx="5.5" cy="16" r="1.1"/><circle cx="26.5" cy="12" r="1.1"/></svg>
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="m16 4 3.4 7.6 8.1.9-6.1 5.5 1.7 8-7.1-4.1-7.1 4.1 1.7-8-6.1-5.5 8.1-.9Z"/></svg>
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10 18c-.6-4 .2-7.4 1-9.2.5-1.1 1.7-1.6 2.8-1.1 1.4.6 3 .6 4.4 0 1.1-.5 2.3 0 2.8 1.1.8 1.8 1.6 5.2 1 9.2"/><path d="M8.6 16.6C5.3 17.4 3 18.7 3 20.2 3 22.3 8.8 24 16 24s13-1.7 13-3.8c0-1.5-2.3-2.8-5.6-3.6"/></svg>
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.6 26.4c-1.6-5.6-1.6-10.2.8-13.6a8.4 8.4 0 0 1 13.2 0c2.4 3.4 2.4 8 .8 13.6"/><circle cx="10.6" cy="12.2" r=".95"/><circle cx="13.6" cy="8.7" r=".95"/><circle cx="18.4" cy="8.7" r=".95"/><circle cx="21.4" cy="12.2" r=".95"/></svg>
+    </div>
+    <a class="baixar" href="convite-eco-do-pampa.pdf" download>Baixar o convite em PDF</a>
+    <p class="local">Grupo Eco do Pampa das Missões · Missões, RS</p>
+  </div>
+</footer>
+
+<div class="faixa base" role="presentation"></div>
+
+<div class="lupa" id="lupa" role="dialog" aria-modal="true" aria-label="Foto ampliada">
+  <button class="fechar" id="fechar" type="button" aria-label="Fechar">&#10005;</button>
+  <button class="ant" id="ant" type="button" aria-label="Foto anterior">&#8249;</button>
+  <img id="lupaImg" src="" alt="">
+  <button class="prox" id="prox" type="button" aria-label="Próxima foto">&#8250;</button>
+</div>
+
 <script>
 (function () {
-  var html = document.documentElement,
-      capa = document.getElementById('capa'),
+  var html = document.documentElement;
+
+  /* ---- galeria ---- */
+  var LEGENDAS = [
+    "Vocalista cantando durante o baile","Gaiteiro de chapéu tocando acordeão",
+    "Guitarrista sorrindo no palco","Baixista tocando sob a luz vermelha",
+    "Acordeão vermelho em primeiro plano","Gaiteiro diante do painel da banda",
+    "Gaiteiro cantando ao microfone","A banda inteira no palco",
+    "Vocalista de pilcha com o microfone","Gaiteiro concentrado na execução",
+    "Guitarrista durante a apresentação","Baixista de lenço e bombacha"
+  ];
+  var galeria = document.getElementById('galeria'), fotos = [];
+  for (var i = 1; i <= 12; i++) {
+    var src = 'fotos/g' + (i < 10 ? '0' : '') + i + '.jpg', txt = LEGENDAS[i - 1];
+    fotos.push({ src: src, alt: txt });
+    var b = document.createElement('button');
+    b.type = 'button'; b.dataset.i = i - 1;
+    b.setAttribute('aria-label', 'Ampliar: ' + txt);
+    b.innerHTML = '<img src="' + src + '" loading="lazy" alt="' + txt + '">';
+    galeria.appendChild(b);
+  }
+
+  /* ---- lupa ---- */
+  var lupa = document.getElementById('lupa'),
+      lupaImg = document.getElementById('lupaImg'), atual = 0;
+  function mostrar(n) {
+    atual = (n + fotos.length) % fotos.length;
+    lupaImg.src = fotos[atual].src; lupaImg.alt = fotos[atual].alt;
+  }
+  function abrirLupa(n) { mostrar(n); lupa.classList.add('on'); document.body.style.overflow = 'hidden'; }
+  function fecharLupa() { lupa.classList.remove('on'); document.body.style.overflow = ''; }
+  galeria.addEventListener('click', function (e) {
+    var b = e.target.closest('button'); if (b) abrirLupa(+b.dataset.i);
+  });
+  document.getElementById('fechar').addEventListener('click', fecharLupa);
+  document.getElementById('ant').addEventListener('click', function (e) { e.stopPropagation(); mostrar(atual - 1); });
+  document.getElementById('prox').addEventListener('click', function (e) { e.stopPropagation(); mostrar(atual + 1); });
+  lupa.addEventListener('click', function (e) { if (e.target === lupa || e.target === lupaImg) fecharLupa(); });
+  document.addEventListener('keydown', function (e) {
+    if (!lupa.classList.contains('on')) return;
+    if (e.key === 'Escape') fecharLupa();
+    if (e.key === 'ArrowLeft') mostrar(atual - 1);
+    if (e.key === 'ArrowRight') mostrar(atual + 1);
+  });
+
+  /* ---- som ---- */
+  var capa = document.getElementById('capa'),
       abrir = document.getElementById('abrir'),
       som = document.getElementById('som'),
       btsom = document.getElementById('btsom'),
-      ALVO = 0.5;
+      ALVO = 0.42, mudoPeloUsuario = false;
 
-  function subirVolume() {                 // evita o susto do som entrando seco
+  function subirVolume() {
     var v = 0; som.volume = 0;
     var t = setInterval(function () {
-      v = Math.min(ALVO, v + ALVO / 25);
-      som.volume = v;
+      v = Math.min(ALVO, v + ALVO / 25); som.volume = v;
       if (v >= ALVO) clearInterval(t);
     }, 40);
   }
-
+  function pausarFundo() {
+    if (!som.paused) { som.pause(); btsom.classList.add('mudo'); mudoPeloUsuario = true; }
+  }
   function entrar() {
     html.classList.add('aberto');
-    var p = som.play();                    // so toca dentro do gesto do usuario
-    if (p && p.catch) {
-      p.then(subirVolume).catch(function () { btsom.classList.add('mudo'); });
-    } else { subirVolume(); }
+    var p = som.play();
+    if (p && p.catch) { p.then(subirVolume).catch(function () { btsom.classList.add('mudo'); }); }
+    else { subirVolume(); }
     setTimeout(function () { if (capa) capa.remove(); }, 900);
   }
-
   abrir.addEventListener('click', entrar);
-  capa.addEventListener('click', entrar);  // qualquer ponto da capa abre
-
+  capa.addEventListener('click', entrar);
   btsom.addEventListener('click', function () {
-    if (som.paused) { som.play(); btsom.classList.remove('mudo'); }
-    else { som.pause(); btsom.classList.add('mudo'); }
+    if (som.paused) { som.play(); btsom.classList.remove('mudo'); mudoPeloUsuario = false; }
+    else { som.pause(); btsom.classList.add('mudo'); mudoPeloUsuario = true; }
   });
 
-  // se a pessoa sair da aba, pausa; ao voltar, retoma se nao estava mudo
+  /* ---- video: so carrega o YouTube ao clicar ---- */
+  var video = document.getElementById('video');
+  function tocarVideo() {
+    if (video.dataset.pronto) return;
+    video.dataset.pronto = '1';
+    pausarFundo();
+    video.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + video.dataset.id +
+      '?autoplay=1&rel=0" title="Bailanta com Eco do Pampa das Missoes" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+  }
+  video.addEventListener('click', tocarVideo);
+  video.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); tocarVideo(); }
+  });
+
+  /* chegou em "Ouca": cala a trilha pra nao brigar com o Spotify */
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (ents) {
+      if (ents[0].isIntersecting) pausarFundo();
+    }, { threshold: .45 }).observe(document.getElementById('ouca'));
+  }
+
   document.addEventListener('visibilitychange', function () {
     if (document.hidden) { som.pause(); }
-    else if (html.classList.contains('aberto') && !btsom.classList.contains('mudo')) { som.play(); }
+    else if (html.classList.contains('aberto') && !mudoPeloUsuario) { som.play(); }
   });
 })();
 </script>
