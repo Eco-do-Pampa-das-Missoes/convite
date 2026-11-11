@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Grupo Eco do Pampa das Missões</title>
 <meta name="description" content="Agenda aberta para bailes, festas e eventos. Missões, RS. Contrate pelo WhatsApp.">
-<meta name="theme-color" content="#120404">
+<meta name="theme-color" content="#1A0403">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Grupo Eco do Pampa das Missões">
@@ -18,54 +18,146 @@
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-  *{box-sizing:border-box}
-  html{background:#120404}
-  body{
-    margin:0; background:#120404; color:#F7E2D3;
-    font-family:"Segoe UI",system-ui,-apple-system,sans-serif;
-    padding:env(safe-area-inset-top) 0 calc(28px + env(safe-area-inset-bottom));
-    -webkit-text-size-adjust:100%;
-  }
-  .wrap{max-width:560px;margin:0 auto}
-  .pg{position:relative;line-height:0}
-  .pg img{width:100%;height:auto;display:block}
+:root{
+  --vinho:#1A0403;
+  --brasa:#C80910;
+  --creme:#FFD7BE;
+  --creme-forte:#FFEEE2;
+  --borda:rgba(255,215,190,.38);
+  --fonte:"Poppins","Segoe UI",system-ui,-apple-system,sans-serif;
+  --greca:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='20' viewBox='0 0 48 20'%3E%3Cg fill='%23FFD7BE'%3E%3Cpath d='M0 18h48v2H0z'/%3E%3Cpath d='M8 18V14h4v-4h4V6h16v4h4v4h4v4z'/%3E%3C/g%3E%3C/svg%3E");
+}
+*{box-sizing:border-box}
+html{background:#1A0403}
+body{
+  margin:0; color:var(--creme); font-family:var(--fonte);
+  background:
+    radial-gradient(1100px 620px at 50% -8%, rgba(200,9,16,.42), transparent 62%),
+    radial-gradient(760px 520px at 12% 32%, rgba(255,120,30,.14), transparent 60%),
+    radial-gradient(760px 520px at 88% 72%, rgba(200,9,16,.18), transparent 60%),
+    #1A0403;
+  background-attachment:fixed;
+  padding-bottom:env(safe-area-inset-bottom);
+  -webkit-text-size-adjust:100%;
+}
 
-  /* botoes sobre a arte, nas coordenadas exatas do PDF */
-  .hit{
-    position:absolute; display:block; border-radius:22px;
-    -webkit-tap-highlight-color:transparent;
-    transition:transform .12s ease, box-shadow .12s ease;
-  }
-  .hit:active{transform:scale(.985)}
-  .hit:focus-visible{outline:3px solid #F7E2D3;outline-offset:3px}
-  @media (hover:hover){
-    .hit:hover{box-shadow:0 0 0 2px rgba(247,226,211,.55), 0 8px 28px rgba(0,0,0,.45)}
-  }
-  .b1{left:5.926%; top:32.889%; width:88.241%; height:12.593%}
-  .b2{left:5.926%; top:47.481%; width:88.241%; height:12.741%}
-  .b3{left:5.926%; top:62.148%; width:88.241%; height:12.889%}
-  .b4{left:5.926%; top:77.037%; width:88.241%; height:12.741%}
+.faixa{height:20px;background-image:var(--greca);background-repeat:repeat-x;
+       background-position:center;opacity:.72}
+.faixa.base{transform:scaleY(-1)}
+.faixa.topo{margin-top:env(safe-area-inset-top)}
 
-  .rodape{padding:26px 20px 0;text-align:center}
-  .baixar{
-    display:inline-block; padding:15px 28px; border-radius:999px;
-    border:1.5px solid rgba(247,226,211,.45); background:rgba(0,0,0,.35);
-    color:#F7E2D3; font-size:16px; font-weight:600; text-decoration:none;
-  }
-  @media (hover:hover){.baixar:hover{background:rgba(247,226,211,.12)}}
+.palco{max-width:1180px;margin:0 auto;padding:22px 18px 0;
+       display:grid;grid-template-columns:1fr;gap:22px;align-items:start}
+
+.cartaz{margin:0;line-height:0;border-radius:16px;overflow:hidden;
+        box-shadow:0 18px 50px rgba(0,0,0,.6), 0 0 0 1px var(--borda)}
+.cartaz img{width:100%;height:auto;display:block}
+
+.arte2{margin:0;position:relative;line-height:0;border-radius:16px;overflow:hidden;
+       box-shadow:0 18px 50px rgba(0,0,0,.6), 0 0 0 1px var(--borda)}
+.arte2 img{width:100%;height:auto;display:block}
+.hit{position:absolute;display:block;border-radius:22px;
+     -webkit-tap-highlight-color:transparent;transition:transform .12s ease}
+.hit:active{transform:scale(.985)}
+.hit:focus-visible{outline:3px solid var(--creme-forte);outline-offset:3px}
+.b1{left:5.926%;top:32.889%;width:88.241%;height:12.593%}
+.b2{left:5.926%;top:47.481%;width:88.241%;height:12.741%}
+.b3{left:5.926%;top:62.148%;width:88.241%;height:12.889%}
+.b4{left:5.926%;top:77.037%;width:88.241%;height:12.741%}
+
+.acoes{display:none}
+.chamada{font-size:clamp(30px,2.6vw,43px);font-weight:800;line-height:1.08;
+         margin:0 0 14px;color:var(--creme-forte);letter-spacing:-.6px}
+.sub{margin:0 0 26px;font-size:16px;font-weight:400;color:rgba(255,215,190,.78)}
+.divisor{height:20px;background-image:var(--greca);background-repeat:repeat-x;
+         opacity:.6;margin:0 0 28px}
+
+.botao{display:flex;align-items:center;gap:18px;padding:17px 24px;margin-bottom:14px;
+       border:1.5px solid var(--borda);border-radius:20px;text-decoration:none;
+       background:linear-gradient(180deg, rgba(56,5,2,.78), rgba(26,4,3,.88));
+       color:var(--creme-forte);font-size:20px;font-weight:700;
+       transition:transform .14s ease, border-color .14s ease, box-shadow .14s ease}
+.botao svg{width:34px;height:34px;flex:0 0 34px}
+@media (hover:hover){
+  .botao:hover{transform:translateX(5px);border-color:var(--creme);
+               box-shadow:0 10px 30px rgba(0,0,0,.5)}
+}
+.botao:focus-visible{outline:3px solid var(--creme-forte);outline-offset:3px}
+
+.rodape{max-width:1180px;margin:0 auto;padding:30px 18px 34px;text-align:center}
+.prendas{display:flex;align-items:center;justify-content:center;gap:28px;
+         margin:0 auto 26px;max-width:520px;color:var(--creme)}
+.prendas svg{width:40px;height:40px;opacity:.8;flex:0 0 40px}
+.prendas::before,.prendas::after{content:"";flex:1 1 auto;height:1px;
+         background:linear-gradient(90deg,transparent,rgba(255,215,190,.45))}
+.prendas::after{background:linear-gradient(90deg,rgba(255,215,190,.45),transparent)}
+.baixar{display:inline-block;padding:15px 30px;border-radius:999px;
+        border:1.5px solid var(--borda);background:rgba(0,0,0,.3);
+        color:var(--creme-forte);font-size:15px;font-weight:600;text-decoration:none;
+        transition:background .14s ease, border-color .14s ease}
+@media (hover:hover){.baixar:hover{background:rgba(255,215,190,.12);border-color:var(--creme)}}
+.local{display:none;margin:20px 0 0;font-size:12px;letter-spacing:.3em;text-transform:uppercase;
+       color:rgba(255,215,190,.45)}
+
+@media (min-width:900px){
+  .palco{grid-template-columns:minmax(0,46%) minmax(0,1fr);gap:46px;
+         padding:40px 28px 0;align-items:center}
+  .acoes{display:block}
+  .arte2{display:none}
+  .rodape{padding-top:42px}
+  .local{display:block}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
-<main class="wrap">
 
-  <div class="pg">
+<div class="faixa topo" role="presentation"></div>
+
+<main class="palco">
+
+  <figure class="cartaz">
     <img src="capa.jpg" width="2160" height="2700"
          alt="Grupo Eco do Pampa das Missões. Agenda aberta para bailes, festas e eventos.">
-  </div>
+  </figure>
 
-  <div class="pg">
-    <img src="links.jpg" width="2160" height="2700"
+  <section class="acoes">
+    <h1 class="chamada">Leve o Eco do Pampa das Missões para o seu evento</h1>
+    <p class="sub">Agenda aberta para bailes, festas e eventos.</p>
+    <div class="divisor" role="presentation"></div>
+
+    <a class="botao" target="_blank" rel="noopener"
+       href="https://wa.me/555596073525?text=Ol%C3%A1%21%20Vi%20o%20convite%20do%20Eco%20do%20Pampa%20e%20quero%20saber%20sobre%20contrata%C3%A7%C3%A3o.">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#25D366"/><path fill="#fff" d="M12.04 5.3a6.63 6.63 0 0 0-5.65 10.1l-.72 2.63 2.7-.71a6.63 6.63 0 1 0 3.67-12.02Zm0 1.2a5.43 5.43 0 1 1-2.84 10.06l-.2-.12-1.6.42.43-1.56-.13-.2A5.43 5.43 0 0 1 12.04 6.5Zm-2.3 2.46c-.12 0-.3.04-.47.22-.16.18-.62.6-.62 1.46s.63 1.7.72 1.82c.09.12 1.23 1.96 3.04 2.67 1.5.59 1.81.47 2.14.44.33-.03 1.06-.43 1.21-.85.15-.42.15-.78.1-.85-.04-.07-.16-.11-.33-.2-.18-.09-1.06-.52-1.22-.58-.16-.06-.28-.09-.4.09-.12.18-.46.58-.56.7-.1.12-.21.13-.39.04a4.88 4.88 0 0 1-1.43-.88 5.4 5.4 0 0 1-1-1.24c-.1-.18-.01-.28.08-.37.08-.08.18-.21.27-.32.09-.11.12-.19.18-.31.06-.12.03-.23-.02-.32-.04-.09-.4-.97-.55-1.33-.14-.34-.29-.3-.4-.3Z"/></svg>
+      Contratar pelo WhatsApp
+    </a>
+
+    <a class="botao" target="_blank" rel="noopener"
+       href="https://open.spotify.com/artist/44MVtI4vC5U4y5AMYRiIhb">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1ED760"/><path fill="#000" d="M17.1 10.9a.9.9 0 0 1-1.23.3 10.4 10.4 0 0 0-8.1-.92.9.9 0 1 1-.5-1.73 12.2 12.2 0 0 1 9.5 1.1.9.9 0 0 1 .33 1.25Zm-1.3 2.86a.75.75 0 0 1-1.03.25 8.6 8.6 0 0 0-6.5-.76.75.75 0 1 1-.4-1.45 10.1 10.1 0 0 1 7.68.92c.35.21.47.67.25 1.04Zm-1.2 2.72a.6.6 0 0 1-.83.2 6.9 6.9 0 0 0-5.1-.6.6.6 0 0 1-.32-1.16 8.1 8.1 0 0 1 6.05.73c.28.17.37.54.2.83Z"/></svg>
+      Ouvir no Spotify
+    </a>
+
+    <a class="botao" target="_blank" rel="noopener"
+       href="https://www.youtube.com/@Ecodopampadasmissoes">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="4.6" width="22" height="14.8" rx="4.4" fill="#FF0000"/><path fill="#fff" d="M10.1 8.9v6.2L15.4 12z"/></svg>
+      Assistir no YouTube
+    </a>
+
+    <a class="botao" target="_blank" rel="noopener"
+       href="https://www.instagram.com/grupoecodopampadasmissoes/">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="ig" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FFC107"/><stop offset=".45" stop-color="#F44336"/><stop offset="1" stop-color="#9C27B0"/></linearGradient></defs><rect x="1.5" y="1.5" width="21" height="21" rx="6.4" fill="url(#ig)"/><circle cx="12" cy="12" r="4.6" fill="none" stroke="#fff" stroke-width="1.9"/><circle cx="17.5" cy="6.5" r="1.3" fill="#fff"/></svg>
+      Seguir no Instagram
+    </a>
+  </section>
+
+  <figure class="arte2">
+    <img src="links.jpg" width="2160" height="2700" loading="lazy"
          alt="Leve o Eco do Pampa das Missões para o seu evento. Toque nos botões abaixo.">
     <a class="hit b1" aria-label="Contratar pelo WhatsApp" target="_blank" rel="noopener"
        href="https://wa.me/555596073525?text=Ol%C3%A1%21%20Vi%20o%20convite%20do%20Eco%20do%20Pampa%20e%20quero%20saber%20sobre%20contrata%C3%A7%C3%A3o."></a>
@@ -75,12 +167,24 @@
        href="https://www.youtube.com/@Ecodopampadasmissoes"></a>
     <a class="hit b4" aria-label="Seguir no Instagram" target="_blank" rel="noopener"
        href="https://www.instagram.com/grupoecodopampadasmissoes/"></a>
-  </div>
-
-  <div class="rodape">
-    <a class="baixar" href="convite-eco-do-pampa.pdf" download>Baixar o convite em PDF</a>
-  </div>
+  </figure>
 
 </main>
+
+<div class="rodape">
+  <div class="prendas" role="presentation">
+    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="15" cy="13.5" rx="7" ry="2.2"/><path d="M8 13.5v2.6a7 7 0 0 0 14 0v-2.6"/><path d="m19.8 11.6 5.4-6.9"/><circle cx="26" cy="3.8" r="1.5"/></svg>
+    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="8" width="6" height="16" rx="1.6"/><rect x="23.5" y="8" width="6" height="16" rx="1.6"/><path d="M8.5 9.5h15v13h-15z"/><path d="M12 9.5v13M15.3 9.5v13M18.6 9.5v13"/><circle cx="5.5" cy="12" r="1.1"/><circle cx="5.5" cy="16" r="1.1"/><circle cx="26.5" cy="12" r="1.1"/></svg>
+    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="m16 4 3.4 7.6 8.1.9-6.1 5.5 1.7 8-7.1-4.1-7.1 4.1 1.7-8-6.1-5.5 8.1-.9Z"/></svg>
+    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10 18c-.6-4 .2-7.4 1-9.2.5-1.1 1.7-1.6 2.8-1.1 1.4.6 3 .6 4.4 0 1.1-.5 2.3 0 2.8 1.1.8 1.8 1.6 5.2 1 9.2"/><path d="M8.6 16.6C5.3 17.4 3 18.7 3 20.2 3 22.3 8.8 24 16 24s13-1.7 13-3.8c0-1.5-2.3-2.8-5.6-3.6"/></svg>
+    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.6 26.4c-1.6-5.6-1.6-10.2.8-13.6a8.4 8.4 0 0 1 13.2 0c2.4 3.4 2.4 8 .8 13.6"/><circle cx="10.6" cy="12.2" r=".95"/><circle cx="13.6" cy="8.7" r=".95"/><circle cx="18.4" cy="8.7" r=".95"/><circle cx="21.4" cy="12.2" r=".95"/></svg>
+  </div>
+
+  <a class="baixar" href="convite-eco-do-pampa.pdf" download>Baixar o convite em PDF</a>
+  <p class="local">Missões, RS</p>
+</div>
+
+<div class="faixa base" role="presentation"></div>
+
 </body>
 </html>
