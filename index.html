@@ -38,6 +38,10 @@
 }
 *{box-sizing:border-box}
 html{background:var(--preto);scroll-behavior:smooth;scroll-padding-top:var(--topo)}
+/* pagina um pouco menor no geral (pedido do Pedro, 13/11): 94% no celular e 90% no computador.
+   Com zoom, 100svh vira so parte da tela; por isso a altura da abertura vai dividida pelo zoom. */
+html{zoom:.94}
+@media(min-width:900px){html{zoom:.9}.hero{min-height:calc(100svh / .9)}}
 body{margin:0;background:var(--preto);color:var(--branco);font-family:var(--fonte);
   font-size:17px;line-height:1.6;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;
   overflow-x:hidden}
@@ -93,7 +97,7 @@ html.js:not(.aberto) body{overflow:hidden}
 @media(min-width:900px){.nav{display:flex}.bt-topo{margin-left:0}}
 
 /* ===== HERO ===== */
-.hero{position:relative;isolation:isolate;min-height:100svh;display:flex;align-items:flex-end;
+.hero{position:relative;isolation:isolate;min-height:calc(100svh / .94);display:flex;align-items:flex-end;
   padding:calc(var(--topo) + 40px) 0 clamp(56px,10vh,104px);overflow:hidden}
 .hero-img{position:absolute;inset:0;z-index:-1}
 .hero-img img{width:100%;height:100%;object-fit:cover;object-position:60% 40%}
@@ -237,6 +241,10 @@ h2{margin:0;font-size:clamp(36px,5.4vw,66px);font-weight:800;font-stretch:72%;li
 .base{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 28px;margin-top:60px;
   padding-top:24px;border-top:1px solid var(--linha);font-size:13px;color:var(--cinza)}
 .base a{color:var(--cinza)}
+.credito{margin:22px 0 0;font-size:13px;color:var(--cinza);text-align:center}
+.credito b{color:#fff;font-weight:600}
+.credito a{color:var(--cinza);text-decoration:underline;text-underline-offset:3px}
+@media(hover:hover){.credito a:hover{color:#fff}}
 
 /* som */
 .som{display:none;position:fixed;z-index:70;
@@ -285,7 +293,7 @@ document.documentElement.className += " js";
   </div>
 </div>
 
-<audio id="som" src="musica.mp3" loop preload="auto"></audio>
+<audio id="som" src="a-voz-do-campo.mp3" loop preload="none"></audio>
 
 <button class="som" id="btsom" type="button" aria-label="Ligar ou desligar a música">
   <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>
@@ -313,7 +321,7 @@ document.documentElement.className += " js";
   <div class="hero-img">
     <picture>
       <source media="(min-width:760px)" srcset="fotos/hero.jpg">
-      <img src="fotos/hero-cel.jpg" width="1800" height="1012"
+      <img src="fotos/hero-cel.jpg" width="900" height="1125"
            alt="Grupo Eco do Pampa das Missões tocando ao vivo: gaita, baixo, guitarra e voz, todos de pilcha.">
     </picture>
   </div>
@@ -340,7 +348,7 @@ document.documentElement.className += " js";
       <h2>Baile de verdade, do jeito que a gente sabe fazer</h2>
       <div class="texto">
         <p>O Eco do Pampa das Missões é um grupo de música gaúcha nascido no coração das Missões, no Rio Grande do Sul. Gaita, baixo, guitarra, bateria e voz, pilcha no corpo e repertório pensado para uma coisa só: não deixar a pista vazia.</p>
-        <p>São os clássicos que todo mundo canta junto, o que está tocando agora e as nossas próprias músicas no meio. A primeira delas já está gravada no nosso primeiro CD.</p>
+        <p>São os clássicos que todo mundo canta junto, o que está tocando agora e as nossas próprias músicas, que você pode conferir no nosso álbum <a href="https://open.spotify.com/artist/44MVtI4vC5U4y5AMYRiIhb" target="_blank" rel="noopener"><em>A Voz do Campo</em></a>.</p>
         <p>Tocamos em bailes, festas de CTG, aniversários, casamentos e eventos em toda a região.</p>
       </div>
       <ol class="pilares">
@@ -350,8 +358,8 @@ document.documentElement.className += " js";
       </ol>
     </div>
     <figure class="foto">
-      <img src="fotos/banda.jpg" width="1500" height="844" loading="lazy"
-           alt="O grupo no palco durante um baile, com gaita, baixo e voz.">
+      <img src="fotos/grupo.jpg" width="1500" height="844" loading="lazy"
+           alt="O grupo no palco durante um baile: baixo, gaitas, voz e guitarra.">
     </figure>
   </div>
 </section>
@@ -459,6 +467,9 @@ document.documentElement.className += " js";
       <span>Grupo Eco do Pampa das Missões · Missões, RS</span>
       <a href="convite-eco-do-pampa.pdf" download="convite-eco-do-pampa-das-missoes.pdf">Baixar o convite em PDF</a>
     </div>
+    <p class="credito">Site feito por <b>Pedro Munareto</b> ·
+      <a target="_blank" rel="noopener" href="https://www.instagram.com/pedro_munaretto/">@pedro_munaretto</a> ·
+      <a target="_blank" rel="noopener" href="https://wa.me/5555991011436?text=Ol%C3%A1%2C%20Pedro!%20Vi%20o%20site%20do%20Eco%20do%20Pampa%20das%20Miss%C3%B5es%20e%20quero%20um%20site%20tamb%C3%A9m.">WhatsApp (55) 99101-1436</a></p>
   </div>
 </footer>
 
@@ -481,15 +492,13 @@ document.documentElement.className += " js";
 
   /* ---- galeria ---- */
   var LEGENDAS = [
-    "Vocalista cantando durante o baile","Gaiteiro de chapéu tocando acordeão",
-    "Guitarrista sorrindo no palco","Baixista tocando sob a luz vermelha",
-    "Acordeão vermelho em primeiro plano","Gaiteiro diante do painel do grupo",
-    "Gaiteiro cantando ao microfone","O grupo inteiro no palco",
-    "Vocalista de pilcha com o microfone","Gaiteiro concentrado na execução",
-    "Guitarrista durante a apresentação","Baixista de lenço e bombacha"
+    "Vocalista cantando durante o baile","Gaiteiro de chapéu sorrindo com a gaita",
+    "Guitarrista sorrindo no palco","Baixista de lenço tocando ao vivo",
+    "Gaiteiro com a gaita vermelha","Gaiteiro de chapéu, de perfil, sob a luz vermelha",
+    "Vocalista de pilcha com o microfone","O grupo inteiro no palco"
   ];
   var galeria = document.getElementById('galeria'), fotos = [];
-  for (var i = 1; i <= 12; i++) {
+  for (var i = 1; i <= LEGENDAS.length; i++) {
     var src = 'fotos/g' + (i < 10 ? '0' : '') + i + '.jpg', txt = LEGENDAS[i - 1];
     fotos.push({ src: src, alt: txt });
     var b = document.createElement('button');
