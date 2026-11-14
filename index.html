@@ -166,6 +166,7 @@ h2{margin:0;font-size:clamp(36px,5.4vw,66px);font-weight:800;font-stretch:72%;li
 .pilares h3{margin:0 0 6px;font-size:18px;font-weight:700}
 .pilares p{margin:0;font-size:15px;line-height:1.6;color:var(--cinza)}
 .foto{margin:0}
+.foto picture{display:block}
 .foto img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;border-radius:2px}
 @media(max-width:959px){.foto img{aspect-ratio:4/3}}
 
@@ -323,7 +324,7 @@ document.documentElement.className += " js";
   <div class="hero-img">
     <picture>
       <source media="(min-width:760px)" srcset="fotos/hero.jpg">
-      <img src="fotos/hero-cel.jpg" width="900" height="1125"
+      <img src="fotos/hero-cel.jpg" width="900" height="1600"
            alt="Grupo Eco do Pampa das Missões tocando ao vivo: gaita, baixo, guitarra e voz, todos de pilcha.">
     </picture>
   </div>
@@ -360,8 +361,12 @@ document.documentElement.className += " js";
       </ol>
     </div>
     <figure class="foto">
-      <img src="fotos/grupo.jpg" width="1000" height="1250" loading="lazy"
-           alt="O grupo no palco durante um baile: baixo, gaitas, voz e guitarra.">
+      <picture>
+        <!-- no computador o topo ja mostra o grupo (9659); aqui vai o vocalista acenando (9645). No celular e o contrario. -->
+        <source media="(min-width:760px)" srcset="fotos/hero-cel.jpg">
+        <img src="fotos/grupo.jpg" width="1000" height="1250" loading="lazy"
+             alt="O grupo no palco durante um baile: gaiteiro e vocalista sorrindo.">
+      </picture>
     </figure>
   </div>
 </section>
