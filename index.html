@@ -98,18 +98,44 @@ html.js:not(.aberto) body{overflow:hidden}
 @media(hover:hover){.bt-topo:hover{background:#E8383E}}
 @media(min-width:900px){.nav{display:flex}.bt-topo{margin-left:0}}
 
-/* ===== HERO ===== */
-.hero{position:relative;isolation:isolate;min-height:calc(100svh / .94);display:flex;align-items:flex-end;
-  padding:calc(var(--topo) + 40px) 0 clamp(56px,10vh,104px);overflow:hidden}
-.hero-img{position:absolute;inset:0;z-index:-1}
-.hero-img img{width:100%;height:100%;object-fit:cover;object-position:60% 40%}
-.hero-img::after{content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(11,11,11,.6) 0%,rgba(11,11,11,.18) 20%,
-             rgba(11,11,11,.8) 40%,rgba(11,11,11,.93) 58%,var(--preto) 100%)}
+/* ===== HERO =====
+   A montagem do convite (pagina 1 do PDF, pedido do Pedro em 15/11) aparece inteira, sem cortar o
+   texto da arte, e atras dela vai a mesma arte desfocada. No celular a arte vem primeiro e o texto
+   embaixo; no computador o texto fica a esquerda e a arte a direita. */
+.hero{position:relative;isolation:isolate;overflow:hidden;padding:var(--topo) 0 56px}
+.hero-fundo{position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg,rgba(11,11,11,.55) 0%,rgba(11,11,11,.4) 30%,rgba(11,11,11,.82) 62%,var(--preto) 100%),
+             url("fotos/cartaz-fundo.jpg") center top/cover no-repeat}
+.hero-in{display:flex;flex-direction:column}
+.cartaz{margin:0 -24px}
+.cartaz img{width:100%;-webkit-mask-image:linear-gradient(#000 87%,transparent);mask-image:linear-gradient(#000 87%,transparent)}
+@media(max-width:560px){.cartaz{margin:0 -20px}}
+/* a arte ja traz o nome do grupo e "agenda aberta": no celular o logo e a etiqueta saem da tela
+   (o logo continua no codigo para o Google e para leitores de tela) */
+@media(max-width:899px){
+  .hero .agenda{display:none}
+  .hero h1{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .hero p.lead{margin-top:6px}
+}
+@media(min-width:640px) and (max-width:899px){
+  .cartaz{width:min(520px,100%);margin:28px auto 0}
+  .cartaz img{border-radius:4px;-webkit-mask-image:none;mask-image:none;box-shadow:0 30px 70px -24px rgba(0,0,0,.85)}
+  .hero p.lead{margin-top:40px}
+  .hero-txt{width:min(520px,100%);margin:0 auto}
+}
 @media(min-width:900px){
-  .hero-img::after{background:
-    linear-gradient(90deg,rgba(11,11,11,.96) 0%,rgba(11,11,11,.88) 34%,rgba(11,11,11,.4) 56%,rgba(11,11,11,.08) 78%),
-    linear-gradient(180deg,rgba(11,11,11,.55) 0%,transparent 24%,transparent 72%,var(--preto) 100%)}}
+  .hero{display:flex;align-items:center;padding:calc(var(--topo) + 32px) 0 48px}
+  .hero-fundo{background:
+    linear-gradient(90deg,rgba(11,11,11,.95) 0%,rgba(11,11,11,.85) 38%,rgba(11,11,11,.45) 70%,rgba(11,11,11,.3) 100%),
+    linear-gradient(180deg,rgba(11,11,11,.5) 0%,transparent 22%,transparent 78%,var(--preto) 100%),
+    url("fotos/cartaz-fundo.jpg") center/cover no-repeat}
+  .hero-in{width:min(1360px,100%);display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;
+    gap:clamp(40px,5vw,96px)}
+  .cartaz{order:2;margin:0}
+  .cartaz img{width:auto;max-width:none;height:min(calc(100svh / .9 - var(--topo) - 80px),52vw,860px);
+    border-radius:4px;-webkit-mask-image:none;mask-image:none;box-shadow:0 40px 90px -30px rgba(0,0,0,.9)}
+  .hero h1 img{width:min(100%,clamp(280px,40vw,560px))}
+}
 .hero-txt{max-width:620px}
 .agenda{display:flex;align-items:center;gap:11px;margin:0 0 26px;font-size:12px;font-weight:600;
   letter-spacing:.26em;text-transform:uppercase;color:rgba(244,241,236,.82)}
@@ -325,14 +351,15 @@ document.documentElement.className += " js";
 
 <main>
 <section class="hero" id="inicio">
-  <div class="hero-img">
-    <picture>
-      <source media="(min-width:760px)" srcset="fotos/hero.jpg">
-      <img src="fotos/hero-cel.jpg" width="900" height="1600"
-           alt="Grupo Eco do Pampa das Missões tocando ao vivo: gaita, baixo, guitarra e voz, todos de pilcha.">
-    </picture>
-  </div>
-  <div class="env">
+  <div class="hero-fundo" aria-hidden="true"></div>
+  <div class="env hero-in">
+    <figure class="cartaz">
+      <!-- montagem do convite (pagina 1 do convite-eco-do-pampa.pdf / capa.jpg) -->
+      <img src="fotos/cartaz.jpg" srcset="fotos/cartaz.jpg 1080w, fotos/cartaz-g.jpg 1620w"
+           sizes="(min-width:900px) 700px, (min-width:640px) 520px, 100vw"
+           width="1080" height="1350" fetchpriority="high"
+           alt="Grupo Eco do Pampa das Missões: os seis integrantes, com o vocalista de chapéu cantando ao centro. Agenda aberta para bailes, festas e eventos.">
+    </figure>
     <div class="hero-txt">
       <p class="agenda"><i class="ponto"></i>Agenda aberta</p>
       <h1><img src="marca/logo-branco.png" width="1298" height="250" alt="Grupo Eco do Pampa das Missões"></h1>
@@ -366,7 +393,7 @@ document.documentElement.className += " js";
     </div>
     <figure class="foto">
       <picture>
-        <!-- no computador o topo ja mostra o grupo (9659); aqui vai o vocalista acenando (9645). No celular e o contrario. -->
+        <!-- computador: vocalista acenando (9645); celular: grupo.jpg. O topo agora e a montagem do convite. -->
         <source media="(min-width:760px)" srcset="fotos/hero-cel.jpg">
         <img src="fotos/grupo.jpg" width="1000" height="1250" loading="lazy"
              alt="O grupo no palco durante um baile: gaiteiro e vocalista sorrindo.">
