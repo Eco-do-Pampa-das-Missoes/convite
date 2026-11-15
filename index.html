@@ -51,16 +51,37 @@ a{color:inherit}
 @media(max-width:560px){.env{padding:0 20px}}
 .ic{width:20px;height:20px;flex:0 0 auto}
 
-/* ===== CAPA (toque para abrir) ===== */
+/* ===== CAPA (toque para abrir) =====
+   Foto com o grupo todo no palco (IMG_9659, pedido do Pedro em 15/11; o baterista nao aparece
+   em nenhuma foto, fica escondido atras da bateria). No celular a foto deitada nao cabe como fundo
+   sem cortar gente, entao ela vai inteira numa faixa acima do logo; no computador ela e o fundo. */
 .capa{display:none}
 html.js .capa{display:flex;position:fixed;inset:0;z-index:90;flex-direction:column;
   align-items:center;justify-content:center;gap:40px;padding:36px 24px;text-align:center;
-  background:linear-gradient(rgba(11,11,11,.84),rgba(11,11,11,.95)),
-             url("fotos/hero-cel.jpg") center/cover no-repeat;
+  background:linear-gradient(rgba(11,11,11,.8),rgba(11,11,11,.9)),
+             url("fotos/todos-fundo.jpg") center/cover no-repeat var(--preto);
   transition:opacity .75s ease,visibility .75s}
 html.js.aberto .capa{opacity:0;visibility:hidden;pointer-events:none}
-/* no computador a capa usa a foto deitada; a vertical do celular ficava ampliada demais */
-@media(min-width:760px){html.js .capa{background:linear-gradient(rgba(11,11,11,.8),rgba(11,11,11,.93)),url("fotos/hero.jpg") center 35%/cover no-repeat}}
+.capa-foto{display:block;width:calc(100% + 48px);margin:0 -24px -8px;aspect-ratio:3/2;
+  background:url("fotos/todos-cel.jpg") center/cover no-repeat;
+  -webkit-mask-image:linear-gradient(transparent,#000 9%,#000 84%,transparent);
+          mask-image:linear-gradient(transparent,#000 9%,#000 84%,transparent)}
+/* tela deitada (computador, celular de lado): a foto vira o fundo. Tablet em pe continua com a faixa. */
+@media(min-width:760px) and (min-aspect-ratio:5/4){
+  html.js .capa{justify-content:flex-end;gap:36px;padding-bottom:clamp(40px,9vh,96px);
+    background:linear-gradient(180deg,rgba(11,11,11,.5) 0%,rgba(11,11,11,.12) 30%,rgba(11,11,11,.3) 52%,
+               rgba(11,11,11,.86) 74%,rgba(11,11,11,.96) 100%),
+               url("fotos/todos.jpg") center 30%/cover no-repeat var(--preto)}
+  .capa-foto{display:none}
+}
+/* celular deitado: pouca altura, o logo ficava em cima dos rostos */
+@media(min-width:760px) and (min-aspect-ratio:5/4) and (max-height:560px){
+  html.js .capa{gap:18px;padding-bottom:22px;
+    background:linear-gradient(180deg,rgba(11,11,11,.45) 0%,rgba(11,11,11,.35) 30%,rgba(11,11,11,.88) 62%,rgba(11,11,11,.97) 100%),
+               url("fotos/todos.jpg") center 30%/cover no-repeat var(--preto)}
+  .capa .capa-logo{width:min(300px,60vw)}
+  .capa .abrir{height:48px}
+}
 html.js:not(.aberto) body{overflow:hidden}
 .capa-logo{width:min(460px,82vw)}
 .capa-acao{display:flex;flex-direction:column;align-items:center;gap:16px}
@@ -319,6 +340,7 @@ document.documentElement.className += " js";
 </svg>
 
 <div class="capa" id="capa">
+  <div class="capa-foto" role="img" aria-label="O grupo tocando no palco"></div>
   <img class="capa-logo" src="marca/logo-branco.png" width="1298" height="250" alt="Grupo Eco do Pampa das Missões">
   <div class="capa-acao">
     <button class="abrir" id="abrir" type="button"><svg class="ic" aria-hidden="true"><use href="#i-nota"/></svg>Toque para abrir</button>
@@ -615,12 +637,12 @@ document.documentElement.className += " js";
     if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); tocarVideo(); }
   });
 
-  /* chegou em "Ouca": cala a trilha pra nao brigar com o Spotify */
-  if ('IntersectionObserver' in window) {
-    new IntersectionObserver(function (ents) {
-      if (ents[0].isIntersecting) pausarFundo();
-    }, { threshold: .45 }).observe(document.getElementById('ouca'));
-  }
+  /* a trilha continua ao passar pelo Spotify (pedido do Pedro, 15/11). So cala se a pessoa
+     tocar dentro do player: o toque no iframe tira o foco da pagina e o foco vai para ele. */
+  var spot = document.querySelector('.spot iframe');
+  window.addEventListener('blur', function () {
+    setTimeout(function () { if (spot && document.activeElement === spot) pausarFundo(); }, 0);
+  });
 
   document.addEventListener('visibilitychange', function () {
     if (document.hidden) { som.pause(); }
