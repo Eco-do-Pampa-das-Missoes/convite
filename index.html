@@ -217,6 +217,7 @@ h2{margin:0;font-size:clamp(36px,5.4vw,66px);font-weight:800;font-stretch:72%;li
 .foto picture{display:block}
 .foto img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;border-radius:2px}
 @media(max-width:959px){.foto img{aspect-ratio:4/3}}
+@media(max-width:759px){.foto-grupo{display:none}}
 
 /* ouca */
 .media-dupla{display:grid;gap:24px}
@@ -414,13 +415,11 @@ document.documentElement.className += " js";
         <li><b>03</b><h3>Agenda aberta</h3><p>Bailes, festas de CTG, casamentos e eventos.</p></li>
       </ol>
     </div>
-    <figure class="foto">
-      <picture>
-        <!-- computador: vocalista acenando (9645); celular: cantores.jpg (9659, os dois sorrindo; a grupo.jpg tinha o gaiteiro fazendo careta). -->
-        <source media="(min-width:760px)" srcset="fotos/hero-cel.jpg">
-        <img src="fotos/cantores.jpg" width="1000" height="1250" loading="lazy"
-             alt="O gaiteiro e o vocalista sorrindo no palco durante um baile.">
-      </picture>
+    <!-- vocalista acenando (9645). So aparece de 760px para cima: no celular a banda pediu
+         para tirar a foto desta parte (16/11). -->
+    <figure class="foto foto-grupo">
+      <img src="fotos/hero-cel.jpg" width="900" height="1600" loading="lazy"
+           alt="O vocalista do grupo acenando no palco durante um baile.">
     </figure>
   </div>
 </section>
