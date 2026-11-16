@@ -558,9 +558,12 @@ document.documentElement.className += " js";
     "Gaiteiro com a gaita vermelha","Gaiteiro de chapéu, de perfil, sob a luz vermelha",
     "Vocalista de pilcha com o microfone","O grupo inteiro no palco"
   ];
+  /* arquivos na mesma ordem das legendas. Ao trocar uma foto, use um nome novo (o navegador
+     guarda a antiga). g08-palco = IMG_9664; a g08 antiga tinha o gaiteiro fazendo careta. */
+  var ARQUIVOS = ["g01", "g02", "g03", "g04", "g05", "g06", "g07", "g08-palco"];
   var galeria = document.getElementById('galeria'), fotos = [];
   for (var i = 1; i <= LEGENDAS.length; i++) {
-    var src = 'fotos/g' + (i < 10 ? '0' : '') + i + '.jpg', txt = LEGENDAS[i - 1];
+    var src = 'fotos/' + ARQUIVOS[i - 1] + '.jpg', txt = LEGENDAS[i - 1];
     fotos.push({ src: src, alt: txt });
     var b = document.createElement('button');
     b.type = 'button'; b.dataset.i = i - 1;
